@@ -17,9 +17,20 @@
     }
 }
 
-.dialog-body {
-    
+.dialog-body-scroll {
+    overflow-y: auto;
+    max-height: 68vh;
+}
+
+.dialog-header {
+    display: flex;
+    gap: 10px;
+    padding-bottom: 10px;
     h2, h3, h4 {
         margin: 0;
     }
+}
+
+.fact {
+    font-style: italic;
 }

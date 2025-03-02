@@ -45,7 +45,7 @@ export const Map = () => {
       }
     </MapContainer>
     <dialog id="modal" ref={modalRef} onClick={onModalClick}>
-        <ConcertDialog item={selectedPack} closeHandler={onModalClose} />
+        <ConcertDialog concert={selectedPack} closeHandler={onModalClose} />
     </dialog>
     </>
   )
