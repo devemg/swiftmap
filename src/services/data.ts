@@ -853,13 +853,15 @@ export const concertDates: ConcertPack[] = [
         {
             date: "2024-05-29",
             songs: [
-                'Sparks Fly/I Can Fix Him(No Really I Can)'
+                'Sparks Fly/I Can Fix Him(No Really I Can)',
+                "I Look in People's Windows/Snow on the Beach"
             ]
         },
         {
             date: '2024-05-30',
             songs: [
-                "Our Song/Jump Then Fall"
+                "Our Song/Jump Then Fall",
+                'King of my heart'
             ]
         }
     ], id: "madrid-2024" },
