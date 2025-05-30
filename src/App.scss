@@ -34,3 +34,15 @@ footer {
         text-align: center;
     }
 }
+
+
+#modal {
+    background-color: #242424;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    min-width: 40vw;
+    &::backdrop {
+        background-color: #0000008b;
+    }
+}

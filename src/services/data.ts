@@ -1,4 +1,4 @@
-interface Concert {
+export interface ConcertPack {
     latitude: number;
     longitude: number;
     city: string;
@@ -8,7 +8,7 @@ interface Concert {
     // songs: string[];
     id: string;
 }
-export const concertDates: Concert[] = [
+export const concertDates: ConcertPack[] = [
     { latitude: 33.5276, longitude: -112.2626, city: "Glendale", country: "United States", venue: "State Farm Stadium", dates: ["2023-03-17", "2023-03-18"], id: "glendale-2023" },
     { latitude: 36.1024, longitude: -115.1703, city: "Las Vegas", country: "United States", venue: "Allegiant Stadium", dates: ["2023-03-24", "2023-03-25"], id: "las-vegas-2023" },
     { latitude: 32.7483, longitude: -97.0928, city: "Arlington", country: "United States", venue: "AT&T Stadium", dates: ["2023-03-31", "2023-04-01", "2023-04-02"], id: "arlington-2023" },

@@ -3,22 +3,29 @@ import React from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import MakrerUrl from "../../../src/assets/mapMarker.svg";
-import { Marker } from "react-leaflet";
+import { Marker, Popup } from "react-leaflet";
+import { ConcertPack } from "../../services/data";
 
 interface CustomMarkerProps {
-  position: L.LatLngExpression;
-  children: React.ReactNode; // Content to display inside the marker
+  item: ConcertPack;
+  openDialogHandler: (pack: ConcertPack) => void;
 }
 
-const CustomMarker: React.FC<CustomMarkerProps> = ({ position, children }) => {
+const CustomMarker: React.FC<CustomMarkerProps> = ({ item, openDialogHandler }) => {
   const customIcon = L.icon({
     iconUrl: MakrerUrl,
     iconSize: [50, 50],
     iconAnchor: [25, 50],
   });
   return (
-    <Marker position={position} icon={customIcon}>
-      {children}
+    <Marker position={[item.latitude, item.longitude]} icon={customIcon}>
+      <Popup>
+        <p>{item.city} - {item.venue}</p>
+        <a href="" onClick={(ev)=> {
+          ev.preventDefault();
+          openDialogHandler && openDialogHandler(item);
+        }}>View More</a>
+      </Popup>
     </Marker>
   );
 };
