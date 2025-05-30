@@ -41,9 +41,14 @@ footer {
     padding: 1rem;
     border-radius: 8px;
     border: none;
-    min-width: 40vw;
-    max-width: 40vw;
+    min-width: 85vw;
+    max-width: 85vw;
     max-height: 90vh;
+    @media (min-width: 600px) {
+        min-width: 40vw;
+        max-width: 40vw;
+    }
+
     &::backdrop {
         background-color: #0000008b;
     }
