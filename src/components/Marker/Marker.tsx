@@ -1,9 +1,9 @@
 
-import React, { useRef } from "react";
+import React from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import MakrerUrl from "../../../src/assets/mapMarker.svg";
-import { Marker, Popup } from "react-leaflet";
+import { Marker, Popup, useMap } from "react-leaflet";
 import { ConcertPack } from "../../services/data";
 
 interface CustomMarkerProps {
@@ -12,6 +12,7 @@ interface CustomMarkerProps {
 }
 
 const CustomMarker: React.FC<CustomMarkerProps> = ({ item, openDialogHandler }) => {
+  const map = useMap();
   const customIcon = L.icon({
     iconUrl: MakrerUrl,
     iconSize: [50, 50],
@@ -24,6 +25,7 @@ const CustomMarker: React.FC<CustomMarkerProps> = ({ item, openDialogHandler }) 
         <a href="" onClick={(ev)=> {
           ev.preventDefault();
           openDialogHandler && openDialogHandler(item);
+          map.flyTo([item.latitude, item.longitude], 14);
         }}>View More</a>
       </Popup>
     </Marker>
